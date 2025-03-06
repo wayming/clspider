@@ -33,6 +33,7 @@ class YmSpider(scrapy.Spider):
             for link in links:
                 yield response.follow(link.url, self.parse_page)
 
+
     def parse_page(self, response):
         # Get the URL to name the file (you can customize this part)
         parsed_url = urlparse(response.url)
