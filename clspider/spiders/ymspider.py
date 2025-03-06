@@ -37,7 +37,7 @@ class YmSpider(scrapy.Spider):
         # Get the URL to name the file (you can customize this part)
         parsed_url = urlparse(response.url)
         tid = parse_qs(parsed_url.query).get('tid', [None])[0]
-        filepath = os.path.join('output', f'{tid}.txt')  # Save to 'output' folder
+        filepath = os.path.join('../output', f'{tid}.txt')  # Save to 'output' folder
 
         # Ensure output folder exists
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
